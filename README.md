@@ -2,9 +2,6 @@
 
 Backend API for accessing cookie stand information.
 
-Uses ElephantSQL postgres database
-
-Lab 41: deployed to Vercel
 
 ## Author: Mike Shen
 
