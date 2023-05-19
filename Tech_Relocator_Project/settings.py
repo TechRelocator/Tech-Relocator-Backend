@@ -32,9 +32,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    # Third Party Apps
     'rest_framework',
     "corsheaders",
-    # Local apps
+    'whitenoise',
+    # Local Apps
     'accounts',
     'user_profile'
 ]
@@ -42,6 +44,7 @@ INSTALLED_APPS = [
 MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
+    "whitenoise.middleware.WhiteNoiseMiddleware",
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -121,6 +124,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
 STATIC_URL = 'static/'
+STATIC_ROOT = BASE_DIR / "staticfiles"
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
@@ -130,20 +134,23 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # Custom User Model
 AUTH_USER_MODEL = "accounts.CustomUser"
 
-SIMPLE_JWT = {
-    "ACCESS_TOKEN_LIFETIME": timedelta(
-        seconds=60 * 60
-    ),  # lasts for 60 minutes
-}
-
 REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': [
         # 'rest_framework.permissions.AllowAny',
         'rest_framework.permissions.IsAuthenticated',
+
     ],
     'DEFAULT_AUTHENTICATION_CLASSES': [
         'rest_framework_simplejwt.authentication.JWTAuthentication',
+        'rest_framework.authentication.TokenAuthentication',
+        'rest_framework.authentication.SessionAuthentication',
     ],
+}
+
+SIMPLE_JWT = {
+    "ACCESS_TOKEN_LIFETIME": timedelta(
+        seconds=60 * 60
+    ),  # lasts for 60 minutes
 }
 
 CORS_ALLOWED_METHODS = ['GET', 'POST',]
