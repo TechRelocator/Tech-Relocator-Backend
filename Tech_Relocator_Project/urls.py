@@ -10,9 +10,15 @@ urlpatterns = [
     # Redirect URL
     path('', lambda req: redirect('api/v1/users/')),
 
-    # DRF URLS
-    path('api/v1/users/', include('user_profile.urls')),
+    # Login Endpoint
     path('api-auth', include("rest_framework.urls")),
+
+    # Users Endpoint
+    path('api/v1/users/', include('user_profile.urls')),
+
+    # Job Data Endpoint
+    path('api/v1/job_data/', include('job_data.urls')),
+
 
     # JWT URLS
     path('api/token/', MyTokenObtainPairView.as_view(), name='token_obtain_pair'),
