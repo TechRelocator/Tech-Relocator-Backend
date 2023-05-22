@@ -38,7 +38,9 @@ INSTALLED_APPS = [
     'whitenoise',
     # Local Apps
     'accounts',
-    'user_profile'
+    'user_profile',
+    'job_data'
+
 ]
 
 MIDDLEWARE = [

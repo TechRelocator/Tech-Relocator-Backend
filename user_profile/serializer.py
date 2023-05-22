@@ -5,3 +5,9 @@ class UserProfileSerializer(serializers.ModelSerializer):
     class Meta:
         model = User_Profile
         fields = "__all__"
+
+
+class TestSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = User_Profile
+        fields = "__all__"
