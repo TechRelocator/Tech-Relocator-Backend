@@ -39,7 +39,8 @@ INSTALLED_APPS = [
     # Local Apps
     'accounts',
     'user_profile',
-    'job_data'
+    'job_data',
+    'skills'
 
 ]
 
