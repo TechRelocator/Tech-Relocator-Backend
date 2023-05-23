@@ -4,7 +4,6 @@ from django.urls import reverse
 
 class User_Profile(models.Model):
     username = models.ForeignKey(get_user_model(), on_delete=models.CASCADE)
-    name = models.CharField(max_length=64, blank=True)
     title = models.CharField(max_length=64)
     location = models.CharField(max_length=64)
     desired_location = models.CharField(max_length=64, blank=True)
