@@ -1,50 +1,29 @@
-# Cookie Stand API
+# ProjectPrep
 
-Backend API for accessing cookie stand information.
+## Team Members
+- Diontre Sanders
+- Mandela Steele-Dadzie
+- Mike Shen
 
+## Description
 
-## Author: Mike Shen
+Showcase data across the US for Tech Job Market openings within the last year. Allowing users to access skills for those job fields, information for locations, and save a user profile.
 
-## Links and Resources
+## Trello
+[Board](https://trello.com/b/Vh0RhuDe/tech-relocator)
 
-https://cookie-stand-admin-pi-orpin.vercel.app/
+# Software Requirements
 
-https://cookie-stand-rinqjud97-mikeshen7.vercel.app/api/v1/app/
+[Click here for Software Requirements Documentation](https://docs.google.com/document/d/1uNsLwTghNdRuhU91hhR9tAfnQ0FBedqrMD659uALwac/edit#heading=h.4vb9njxdiurg)
 
-##  Setup
-Create elephantSQL instance
+# Data Flow / Domain Modeling
 
-Need to set up root/.env and CookieStand/.env files for Django secret key.  See .env.sample
+[Click here for Data Flow Requirements Documentation](https://www.figma.com/file/Xs7KWMTooqGyDgUJHHS8Cd/Tech-Relocators-Domain-Model?type=whiteboard&node-id=0-1&t=8KkkAJ3ARZ5MjiXi-0)
 
-docker compose up --build
+# WireFrame
 
-# How to initialize/run your application (where applicable)
+[Click here for WireFrame Requirements Documentation](https://www.figma.com/file/1xmBZIcWOeWTeF7NFFcyKN/Tech-Relocator-Wireframe?type=whiteboard&node-id=0-1&t=JbwNkGU0CaDHZuO7-0)
 
-1. Build docker container: docker compose up --build
-2. With docker running: docker compose run web python manage.py migrate
-3. With docker running: docker compose run web python manage.py createsuperuser
+# User Stories
 
-
-Routes:
-1. Get a token: http post localhost:8000/api/token/ username=admin password=YOUR_PASSWORD 
-2. Refresh token: http post localhost:8000/api/refresh/ refresh=REFRESH_TOKEN_HERE 
-3. Roster list: http localhost:8000/api/v1/app/ "Authorization: Bearer ACCESS_TOKEN_HERE"
-4. Roster detail: http localhost:8000/api/v1/app/{pk} "Authorization: Bearer ACCESS_TOKEN_HERE"
-- where {pk} is the primary key of the player
-5. Admin: http://localhost:8000/admin
-
-
-
-## How to use your library (where applicable)
-
-## Tests
-
-Modify CookieStand/.env to use local database
-
-Modify docker-compose.yml to use local database
-
-docker compose run web python manage.py test
-
-Manually tested API using HTTPie
-
-Manually tested JWT using HTTPie
+[Click here for User Stories Documentation](https://docs.google.com/document/d/1t-FPML2457pX6DXI7BZiLLZBzYQPKEUVshsQSxYiPDg/edit#heading=h.2d0c2fwgg60x)
