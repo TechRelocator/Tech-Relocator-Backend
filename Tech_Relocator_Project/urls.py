@@ -19,6 +19,8 @@ urlpatterns = [
     # Job Data Endpoint
     path('api/v1/job_data/', include('job_data.urls')),
 
+    # Skills Endpoint
+    path('api/v1/skills/', include('skills.urls')),
 
     # JWT URLS
     path('api/token/', MyTokenObtainPairView.as_view(), name='token_obtain_pair'),
