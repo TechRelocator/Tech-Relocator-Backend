@@ -14,12 +14,12 @@ Showcase data across the US for Tech Job Market openings within the last year. A
 https://tech-relocator-backend.vercel.app/api/v1/users/
 
 https://tech-relocator-backend.vercel.app/api/v1/job_data
-?title=python
-?location=seattle
-?salary=100000
+- ?title=python
+- ?location=seattle
+- ?salary=100000
 
 https://tech-relocator-backend.vercel.app/api/v1/skills
-?search
+- ?search
 
 https://tech-relocator-backend.vercel.app/api/v1/col
 ?state=washington
