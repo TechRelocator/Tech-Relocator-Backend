@@ -10,9 +10,10 @@ class ColList(ListCreateAPIView):
     def get_queryset(self):
         queryset = super().get_queryset()
 
-        # search by state
+        # Search queries
         search_query_state = self.request.query_params.getlist('state')
 
+        # Search by one or multiple states
         if search_query_state:
             # Use Q objects to perform OR operation on multiple states
             filter_query = Q()
