@@ -40,8 +40,8 @@ INSTALLED_APPS = [
     'accounts',
     'user_profile',
     'job_data',
-    'skills'
-
+    'skills',
+    'col',
 ]
 
 MIDDLEWARE = [

@@ -22,6 +22,9 @@ urlpatterns = [
     # Skills Endpoint
     path('api/v1/skills/', include('skills.urls')),
 
+    # Cost of Living Endpoint
+    path('api/v1/col/', include('col.urls')),
+
     # JWT URLS
     path('api/token/', MyTokenObtainPairView.as_view(), name='token_obtain_pair'),
     path('api/token/refresh/', jwt_views.TokenRefreshView.as_view(), name='token_refresh'),
