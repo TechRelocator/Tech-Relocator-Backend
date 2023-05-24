@@ -8,7 +8,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
 
     # Redirect URL
-    path('', lambda req: redirect('api/v1/users/')),
+    path('', lambda req: redirect('api/v1/job_data/')),
 
     # Login Endpoint
     path('api-auth', include("rest_framework.urls")),

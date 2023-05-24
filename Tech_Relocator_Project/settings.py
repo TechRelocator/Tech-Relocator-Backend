@@ -36,6 +36,7 @@ INSTALLED_APPS = [
     'rest_framework',
     "corsheaders",
     'whitenoise',
+    'coverage',
     # Local Apps
     'accounts',
     'user_profile',
@@ -91,6 +92,12 @@ DATABASES = {
     }
 }
 
+# Use a temporary database for tests
+DATABASES['default']['TEST'] = {
+    'SERIALIZE': False,
+    'MIRROR': 'default',
+    'NAME': 'test_{}'.format(DATABASES['default']['NAME']),
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators

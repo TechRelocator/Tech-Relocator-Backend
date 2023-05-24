@@ -16,6 +16,3 @@ class User_Profile(models.Model):
 
     def __str__(self):
         return self.title
-
-    # def get_absolute_url(self):
-    #     return reverse('prospect_detail', args=[str(self.id)])

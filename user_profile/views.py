@@ -1,7 +1,7 @@
 from rest_framework.generics import RetrieveUpdateDestroyAPIView, ListCreateAPIView
 from .models import User_Profile
 from .serializer import UserProfileSerializer, TestSerializer
-from .permissions import IsOwner
+# from .permissions import IsOwner
 from rest_framework import filters
 
 
