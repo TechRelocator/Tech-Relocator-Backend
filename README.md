@@ -9,6 +9,25 @@
 
 Showcase data across the US for Tech Job Market openings within the last year. Allowing users to access skills for those job fields, information for locations, and save a user profile.
 
+## Endpoints / search parameters: 
+
+https://tech-relocator-backend.vercel.app/api/v1/users/
+
+https://tech-relocator-backend.vercel.app/api/v1/job_data
+?title=python
+?location=seattle
+?salary=100000
+
+https://tech-relocator-backend.vercel.app/api/v1/skills
+?search
+
+https://tech-relocator-backend.vercel.app/api/v1/col
+?state=washington
+
+https://tech-relocator-backend.vercel.app/token
+
+https://tech-relocator-backend.vercel.app/token/refresh
+
 ## Trello
 [Board](https://trello.com/b/Vh0RhuDe/tech-relocator)
 
