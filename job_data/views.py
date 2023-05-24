@@ -11,23 +11,31 @@ class JobDataList(ListCreateAPIView):
     def get_queryset(self):
         queryset = super().get_queryset()
 
-        # search by title
-        search_query = self.request.query_params.get('title', None)
+        # Search queries
+        search_query_title = self.request.query_params.getlist('title', None)
+        search_query_location = self.request.query_params.getlist('location', None)
+        search_query_salary = self.request.query_params.get('salary', None)
 
-        if search_query:
-            queryset = queryset.filter(title__icontains=search_query)
+        # search by one or more titles
+        if search_query_title:
+            # Use Q objects to perform OR operation on multiple states
+            filter_query = Q()
+            for title in search_query_title:
+                filter_query |= Q(title__icontains=title)
+            queryset = queryset.filter(filter_query)
 
-        # search by location
-        search_query = self.request.query_params.get('location', None)
-
-        if search_query:
-            queryset = queryset.filter(location__icontains=search_query)
+        # search by one or more locations
+        if search_query_location:
+            # Use Q objects to perform OR operation on multiple states
+            filter_query = Q()
+            for location in search_query_location:
+                filter_query |= Q(location__icontains=location)
+            queryset = queryset.filter(filter_query)
 
         # Search by salary in range
-        salary_search = self.request.query_params.get('salary', None)
-        if salary_search:
+        if search_query_salary:
             queryset = queryset.filter(
-                Q(salary_low__lte=salary_search) & Q(salary_high__gte=salary_search)
+                Q(salary_low__lte=search_query_salary) & Q(salary_high__gte=search_query_salary)
             )
 
         return queryset[:100]
