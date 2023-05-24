@@ -6,7 +6,7 @@ from rest_framework import filters
 
 
 class UserProfileList(ListCreateAPIView):
-    permission_classes = (IsOwner,)
+    # permission_classes = (IsOwner,)
     queryset = User_Profile.objects.all()
     serializer_class = TestSerializer
     search_fields = ['title']
@@ -14,7 +14,7 @@ class UserProfileList(ListCreateAPIView):
 
 
 class UserProfileDetail(RetrieveUpdateDestroyAPIView):
-    permission_classes = (IsOwner,)
+    # permission_classes = (IsOwner,)
     queryset = User_Profile.objects.all()
     serializer_class = UserProfileSerializer
 
