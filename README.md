@@ -1,4 +1,4 @@
-# ProjectPrep
+# Tech Relocator Backend
 
 ## Team Members
 - Diontre Sanders
@@ -7,7 +7,7 @@
 
 ## Description
 
-Showcase data across the US for Tech Job Market openings within the last year. Allowing users to access skills for those job fields, information for locations, and save a user profile.
+Showcase data across the US for Tech Job Market openings within the last year. Allowing users to access skills for those job fields, information for locations.
 
 ## Endpoints / search parameters: 
 
