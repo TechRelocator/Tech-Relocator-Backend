@@ -1,12 +1,11 @@
 from rest_framework.generics import RetrieveUpdateDestroyAPIView, ListCreateAPIView
-from .models import Job
-from .serializer import JobSerializer
+from .models import Col
+from .serializer import ColSerializer
 from django.db.models import Q
 
-
-class JobDataList(ListCreateAPIView):
-    queryset = Job.objects.all()
-    serializer_class = JobSerializer
+class ColList(ListCreateAPIView):
+    queryset = Col.objects.all()
+    serializer_class = ColSerializer
 
     def get_queryset(self):
         queryset = super().get_queryset()
@@ -30,8 +29,8 @@ class JobDataList(ListCreateAPIView):
                 Q(salary_low__lte=salary_search) & Q(salary_high__gte=salary_search)
             )
 
-        return queryset[:100]
+        return queryset
 
-class JobDataDetail(RetrieveUpdateDestroyAPIView):
-    queryset = Job.objects.all()
-    serializer_class = JobSerializer
+class ColDetail(RetrieveUpdateDestroyAPIView):
+    queryset = Col.objects.all()
+    serializer_class = ColSerializer
