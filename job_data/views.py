@@ -12,22 +12,22 @@ class JobDataList(ListCreateAPIView):
         queryset = super().get_queryset()
 
         # search by title
-        search_query = self.request.query_params.get('title', None)
+        search_query_title = self.request.query_params.get('title', None)
 
-        if search_query:
-            queryset = queryset.filter(title__icontains=search_query)
+        if search_query_title:
+            queryset = queryset.filter(title__icontains=search_query_title)
 
         # search by location
-        search_query = self.request.query_params.get('location', None)
+        search_query_location = self.request.query_params.get('location', None)
 
-        if search_query:
-            queryset = queryset.filter(location__icontains=search_query)
+        if search_query_location:
+            queryset = queryset.filter(location__icontains=search_query_location)
 
         # Search by salary in range
-        salary_search = self.request.query_params.get('salary', None)
-        if salary_search:
+        search_query_salary = self.request.query_params.get('salary', None)
+        if search_query_salary:
             queryset = queryset.filter(
-                Q(salary_low__lte=salary_search) & Q(salary_high__gte=salary_search)
+                Q(salary_low__lte=search_query_salary) & Q(salary_high__gte=search_query_salary)
             )
 
         return queryset[:100]
