@@ -60,7 +60,7 @@ class JobTests(TestCase):
     def test_job_detail_view(self):
         response = self.client.get("https://tech-relocator-backend.vercel.app/api/v1/job_data/6037")
         self.assertEqual(response.status_code, 200)
-        self.assertContains(response, "Machine Learning Engineer V")
+        self.assertContains(response, "Software Engineer - Developer Experience")
 
     def test_job_search(self):
         response = self.client.get("https://tech-relocator-backend.vercel.app/api/v1/job_data/?title=data&location=seattle&salary=100000")
